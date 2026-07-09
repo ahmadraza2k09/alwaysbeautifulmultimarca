@@ -12,6 +12,49 @@ interface Props {
 
 const t = (lang: Lang, es: string, en: string) => lang === 'es' ? es : en
 
+export function TrustIcon({ name, size = 20 }: { name: 'pin' | 'truck' | 'chat' | 'sparkle'; size?: number }) {
+  const common = {
+    width: size,
+    height: size,
+    viewBox: '0 0 24 24',
+    fill: 'none',
+    stroke: '#5A2D9C',
+    strokeWidth: 2,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+  }
+  if (name === 'pin') {
+    return (
+      <svg {...common} xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z" />
+        <circle cx="12" cy="10" r="2.5" />
+      </svg>
+    )
+  }
+  if (name === 'truck') {
+    return (
+      <svg {...common} xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 7h11v8H3z" />
+        <path d="M14 10h4l3 3v2h-7z" />
+        <circle cx="7" cy="18" r="1.6" />
+        <circle cx="17" cy="18" r="1.6" />
+      </svg>
+    )
+  }
+  if (name === 'chat') {
+    return (
+      <svg {...common} xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 4h16v11H8l-4 4V4z" />
+      </svg>
+    )
+  }
+  return (
+    <svg {...common} xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 2l1.8 5.6L19 9l-5.2 1.8L12 16l-1.8-5.2L5 9l5.2-1.4L12 2z" />
+    </svg>
+  )
+}
+
 export function HomePage({ lang, onShop, onAddToCart }: Props) {
   const bestsellers = products.filter(p => p.bestseller).slice(0, 4)
 
@@ -95,24 +138,26 @@ export function HomePage({ lang, onShop, onAddToCart }: Props) {
       </section>
 
       {/* Trust strip */}
-      <section className="py-5 border-y" style={{ backgroundColor: '#5A2D9C', borderColor: '#4a2280' }}>
-        <div className="max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-center gap-8 md:gap-16 text-white/80 text-sm font-medium">
-          <div className="flex items-center gap-2">
-            <span className="text-xl">🇨🇴</span>
-            <span>{t(lang, 'Hecho en Colombia', 'Made in Colombia')}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-xl">🚚</span>
-            <span>{t(lang, 'Envíos a todo USA', 'Ships across USA')}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-xl">💬</span>
-            <span>{t(lang, 'Atención por WhatsApp', 'WhatsApp Support')}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-xl">✨</span>
-            <span>{t(lang, 'Calidad Premium', 'Premium Quality')}</span>
-          </div>
+      <section className="py-6 border-y" style={{ backgroundColor: '#5A2D9C', borderColor: '#4a2280' }}>
+        <div className="max-w-6xl mx-auto px-4 grid grid-cols-2 gap-y-6 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-x-16 sm:gap-y-4 text-white/80 text-sm font-medium">
+          {(
+            [
+              { label: t(lang, 'Hecho en Colombia', 'Made in Colombia'), icon: 'pin' as const },
+              { label: t(lang, 'Envíos a todo USA', 'Ships across USA'), icon: 'truck' as const },
+              { label: t(lang, 'Atención por WhatsApp', 'WhatsApp Support'), icon: 'chat' as const },
+              { label: t(lang, 'Calidad Premium', 'Premium Quality'), icon: 'sparkle' as const },
+            ]
+          ).map((f) => (
+            <div key={f.label} className="flex flex-col sm:flex-row items-center gap-2 text-center sm:text-left">
+              <span
+                className="skeu-badge flex items-center justify-center rounded-full shrink-0"
+                style={{ width: 44, height: 44, backgroundColor: '#F4F0FA' }}
+              >
+                <TrustIcon name={f.icon} />
+              </span>
+              <span>{f.label}</span>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -236,7 +281,6 @@ export function HomePage({ lang, onShop, onAddToCart }: Props) {
         style={{ background: 'linear-gradient(135deg, #5A2D9C 0%, #3d1a6e 100%)' }}
       >
         <div className="max-w-3xl mx-auto">
-          <div className="text-5xl mb-4">🇨🇴</div>
           <h2
             className="text-3xl sm:text-4xl font-bold text-white mb-4"
             style={{ fontFamily: "'Playfair Display', serif" }}
