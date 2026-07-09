@@ -1,0 +1,10 @@
+{
+  "description": "An e-commerce store featuring a custom logo and integrated contact options via Instagram and WhatsApp for seamless customer inquiries.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

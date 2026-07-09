@@ -1,0 +1,88 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.figma.com/font/PlayfairDisplay_wght__1') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.figma.com/font/PlayfairDisplay-Italic_wght__1') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Poppins-Regular_6') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Poppins-Medium_6') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Poppins-SemiBold_6') format('woff2');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://static.figma.com/font/Poppins-Bold_6') format('woff2');
+}
+
+@theme {
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+
+  --color-brand-purple: #5A2D9C;
+  --color-brand-orchid: #B384C8;
+  --color-brand-lavender: #F4F0FA;
+  --color-brand-magenta: #E845A3;
+  --color-brand-charcoal: #2B2B2B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #F4F0FA;
+  color: #2B2B2B;
+  font-family: 'Poppins', sans-serif;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #B384C8 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #B384C8;
+  border-radius: 2px;
+}
