@@ -180,7 +180,7 @@ export function HomePage({ lang, onShop, onAddToCart }: Props) {
             <button
               key={cat.key}
               onClick={() => onShop(cat.key)}
-              className="group relative rounded-2xl overflow-hidden text-left transition-transform duration-300 hover:-translate-y-1"
+              className="group relative rounded-2xl overflow-hidden text-left transition-transform duration-300 hover:-translate-y-1 skeu-surface"
               style={{ aspectRatio: '3/4' }}
             >
               <ImageWithFallback
