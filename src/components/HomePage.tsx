@@ -2,12 +2,13 @@ import { ProductCard } from './ProductCard'
 import { ImageWithFallback } from './ImageWithFallback'
 import { products, categories } from '../data/products'
 import type { Lang } from '../App'
-import type { Category } from '../data/products'
+import type { Category, Product } from '../data/products'
 
 interface Props {
   lang: Lang
   onShop: (cat?: Category) => void
   onAddToCart: () => void
+  onSelectProduct: (product: Product) => void
 }
 
 const t = (lang: Lang, es: string, en: string) => lang === 'es' ? es : en
@@ -55,7 +56,7 @@ export function TrustIcon({ name, size = 20 }: { name: 'pin' | 'truck' | 'chat' 
   )
 }
 
-export function HomePage({ lang, onShop, onAddToCart }: Props) {
+export function HomePage({ lang, onShop, onAddToCart, onSelectProduct }: Props) {
   const bestsellers = products.filter(p => p.bestseller).slice(0, 4)
 
   return (
@@ -226,7 +227,7 @@ export function HomePage({ lang, onShop, onAddToCart }: Props) {
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
             {bestsellers.map(product => (
-              <ProductCard key={product.id} product={product} lang={lang} onAddToCart={onAddToCart} />
+              <ProductCard key={product.id} product={product} lang={lang} onAddToCart={onAddToCart} onSelect={onSelectProduct} />
             ))}
           </div>
         </div>

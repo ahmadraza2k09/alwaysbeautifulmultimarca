@@ -1,20 +1,21 @@
 import { useState, useMemo, useEffect } from 'react'
 import { products, categories } from '../data/products'
 import { ProductCard } from './ProductCard'
-import type { Category } from '../data/products'
+import type { Category, Product } from '../data/products'
 import type { Lang } from '../App'
 
 interface Props {
   lang: Lang
   initialCategory: Category | null
   onAddToCart: () => void
+  onSelectProduct: (product: Product) => void
 }
 
 type SortKey = 'default' | 'price-asc' | 'price-desc' | 'name'
 
 const t = (lang: Lang, es: string, en: string) => lang === 'es' ? es : en
 
-export function ShopPage({ lang, initialCategory, onAddToCart }: Props) {
+export function ShopPage({ lang, initialCategory, onAddToCart, onSelectProduct }: Props) {
   const [activeCategory, setActiveCategory] = useState<Category | null>(initialCategory)
 
   useEffect(() => {
@@ -132,7 +133,7 @@ export function ShopPage({ lang, initialCategory, onAddToCart }: Props) {
           ) : (
             <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5">
               {filtered.map(product => (
-                <ProductCard key={product.id} product={product} lang={lang} onAddToCart={onAddToCart} />
+                <ProductCard key={product.id} product={product} lang={lang} onAddToCart={onAddToCart} onSelect={onSelectProduct} />
               ))}
             </div>
           )}

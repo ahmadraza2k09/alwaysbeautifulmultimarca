@@ -7,7 +7,7 @@ interface Props {
   product: Product
   lang: Lang
   onAddToCart: () => void
-  onSelect?: (product: Product) => void
+  onSelect: (product: Product) => void
 }
 
 export function ProductCard({ product, lang, onAddToCart, onSelect }: Props) {
@@ -33,7 +33,7 @@ export function ProductCard({ product, lang, onAddToCart, onSelect }: Props) {
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      onClick={() => onSelect?.(product)}
+      onClick={() => onSelect(product)}
     >
       {/* Badges */}
       <div className="absolute top-3 left-3 z-10 flex flex-col gap-1.5">
