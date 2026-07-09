@@ -28,26 +28,6 @@ export function Header({ lang, setLang, onNav, onShopCategory, cartCount }: Prop
 
   return (
     <>
-      {/* Announcement marquee */}
-      <div
-        className="text-white text-xs font-medium py-2 overflow-hidden"
-        style={{ backgroundColor: '#E845A3' }}
-      >
-        <div className="marquee-track">
-          {[0, 1].map((rep) => (
-            <div key={rep} className="flex items-center shrink-0" aria-hidden={rep === 1}>
-              {[t('Hecho en Colombia', 'Made in Colombia'), t('Envíos a toda USA', 'Shipping across USA'), 'WhatsApp'].map(
-                (item, i) => (
-                  <span key={i} className="px-6 whitespace-nowrap">
-                    {item}
-                  </span>
-                )
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Main header */}
       <header
         className="sticky top-0 z-50 skeu-surface-dark"
