@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { products, categories } from '../data/products'
 import { ProductCard } from './ProductCard'
 import type { Category } from '../data/products'
@@ -16,6 +16,10 @@ const t = (lang: Lang, es: string, en: string) => lang === 'es' ? es : en
 
 export function ShopPage({ lang, initialCategory, onAddToCart }: Props) {
   const [activeCategory, setActiveCategory] = useState<Category | null>(initialCategory)
+
+  useEffect(() => {
+    setActiveCategory(initialCategory)
+  }, [initialCategory])
   const [sort, setSort] = useState<SortKey>('default')
   const [onlyUnique, setOnlyUnique] = useState(false)
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -53,7 +57,7 @@ export function ShopPage({ lang, initialCategory, onAddToCart }: Props) {
 
       <div className="flex gap-8">
         {/* Sidebar (desktop) */}
-        <aside className="hidden lg:block w-56 shrink-0">
+        <aside className="hidden lg:block w-56 shrink-0 skeu-surface rounded-2xl p-5" style={{ backgroundColor: '#fff' }}>
           <SidebarContent
             lang={lang}
             allCats={allCats}
@@ -139,7 +143,7 @@ export function ShopPage({ lang, initialCategory, onAddToCart }: Props) {
       {sidebarOpen && (
         <div className="fixed inset-0 z-50 lg:hidden">
           <div className="absolute inset-0 bg-black/40" onClick={() => setSidebarOpen(false)} />
-          <div className="absolute left-0 top-0 h-full w-72 overflow-y-auto p-6 shadow-xl" style={{ backgroundColor: '#F4F0FA' }}>
+          <div className="absolute left-0 top-0 h-full w-72 overflow-y-auto p-6 skeu-surface" style={{ backgroundColor: '#F4F0FA' }}>
             <div className="flex justify-between items-center mb-6">
               <span className="font-semibold" style={{ color: '#5A2D9C' }}>{t(lang, 'Filtros', 'Filters')}</span>
               <button onClick={() => setSidebarOpen(false)} className="text-lg" style={{ color: '#B384C8' }}>✕</button>
