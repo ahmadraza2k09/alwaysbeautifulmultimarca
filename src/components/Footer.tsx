@@ -1,4 +1,4 @@
-import logoSrc from '../imports/cf2cb152-86cd-4195-a7b5-9bdfb72589f4.png'
+import logoSrc from '../imports/ab-logo-mark.png'
 import type { Lang } from '../App'
 import type { Page } from '../App'
 
