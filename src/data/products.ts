@@ -12,6 +12,8 @@ export interface Product {
   id: number;
   name: string;
   nameEn: string;
+  description?: string;
+  descriptionEn?: string;
   price: number;
   category: Category;
   image: string;
@@ -109,7 +111,7 @@ export const products: Product[] = [
   {
     id: 11,
     name: 'Panty levanta cola bidireccional push up',
-    nameEn: 'Bidirectional Push-Up Butt Lifter',
+    nameEn: 'Bidirectional Push Up Butt Lifter',
     price: 75,
     category: 'Fajas',
     image: UNSPLASH('1606902965551-dce093cda6e7'),
@@ -130,6 +132,8 @@ export const products: Product[] = [
     id: 13,
     name: 'Leggings negros',
     nameEn: 'Black Leggings',
+    description: 'El básico infaltable: leggings negros de cintura alta con compresión suave, versátiles para el gym o el día a día.',
+    descriptionEn: 'The everyday essential: high-waist black leggings with gentle compression, versatile enough for the gym or daily wear.',
     price: 35,
     category: 'Leggings',
     image: UNSPLASH('1584863495140-a320b13a11a8'),
@@ -154,6 +158,8 @@ export const products: Product[] = [
     id: 16,
     name: 'Leggings super héroes',
     nameEn: 'Superhero Leggings',
+    description: 'Leggings de estampado súper héroes con compresión suave y cintura alta. Divertidos, cómodos y con el ajuste perfecto para tu rutina de ejercicio.',
+    descriptionEn: 'Superhero-print leggings with gentle compression and a high waist. Fun, comfortable, and shaped to move with your workout.',
     price: 45,
     category: 'Leggings',
     image: UNSPLASH('1597586309260-5562dd1c6b3c'),
@@ -161,7 +167,7 @@ export const products: Product[] = [
   {
     id: 17,
     name: 'Leggings cierre frontal',
-    nameEn: 'Front-Zip Leggings',
+    nameEn: 'Front Zip Leggings',
     price: 35,
     category: 'Leggings',
     image: UNSPLASH('1606902965551-dce093cda6e7'),
@@ -169,7 +175,7 @@ export const products: Product[] = [
   {
     id: 18,
     name: 'Leggings transparencia completa',
-    nameEn: 'Full-Mesh Leggings',
+    nameEn: 'Full Mesh Leggings',
     price: 35,
     category: 'Leggings',
     image: UNSPLASH('1540582093410-c06370c89515'),
@@ -188,6 +194,8 @@ export const products: Product[] = [
     id: 20,
     name: 'Top espalda ajustable',
     nameEn: 'Adjustable Back Top',
+    description: 'Top deportivo con espalda ajustable y soporte medio, ideal para entrenar o usar en el día a día. Tela suave que se adapta a tu cuerpo sin marcar.',
+    descriptionEn: 'A sports top with an adjustable back and medium support, perfect for training or everyday wear. Soft fabric that moves with your body without digging in.',
     price: 25,
     category: 'Tops Deportivos',
     image: UNSPLASH('1586323289103-e309634e2a1b'),
@@ -206,7 +214,7 @@ export const products: Product[] = [
   {
     id: 22,
     name: 'Short Push up (liso)',
-    nameEn: 'Push-Up Short (solid)',
+    nameEn: 'Push Up Short (solid)',
     price: 25,
     category: 'Shorts y Faldas',
     image: UNSPLASH('1584863495140-a320b13a11a8'),
@@ -214,7 +222,7 @@ export const products: Product[] = [
   {
     id: 23,
     name: 'Short Push up Estampado Comic',
-    nameEn: 'Comic Print Push-Up Short',
+    nameEn: 'Comic Print Push Up Short',
     price: 25,
     category: 'Shorts y Faldas',
     image: UNSPLASH('1597586309260-5562dd1c6b3c'),
@@ -222,7 +230,7 @@ export const products: Product[] = [
   {
     id: 24,
     name: 'Short Push up Estampado Drip',
-    nameEn: 'Drip Print Push-Up Short',
+    nameEn: 'Drip Print Push Up Short',
     price: 25,
     category: 'Shorts y Faldas',
     image: UNSPLASH('1531520563951-4c0e3d3fcacc'),
@@ -230,7 +238,7 @@ export const products: Product[] = [
   {
     id: 25,
     name: 'Short Push up Rayas',
-    nameEn: 'Striped Push-Up Short',
+    nameEn: 'Striped Push Up Short',
     price: 25,
     category: 'Shorts y Faldas',
     image: UNSPLASH('1768929096150-9a76dc1d6560'),
@@ -238,7 +246,7 @@ export const products: Product[] = [
   {
     id: 26,
     name: 'Short Push up Estampado Militar',
-    nameEn: 'Military Print Push-Up Short',
+    nameEn: 'Military Print Push Up Short',
     price: 25,
     category: 'Shorts y Faldas',
     image: UNSPLASH('1599552683573-9dc48255fe85'),
@@ -288,8 +296,8 @@ export const products: Product[] = [
   },
   {
     id: 32,
-    name: 'Conjunto Short push up - Top tiras ajustables',
-    nameEn: 'Push-Up Short & Adjustable Top Set',
+    name: 'Conjunto Short push up y Top tiras ajustables',
+    nameEn: 'Push Up Short & Adjustable Top Set',
     price: 53,
     category: 'Conjuntos',
     image: UNSPLASH('1597586309250-ceb10255182d'),
@@ -304,7 +312,7 @@ export const products: Product[] = [
   },
   {
     id: 34,
-    name: 'Conjunto Leggings liso - top manga sisa',
+    name: 'Conjunto Leggings liso y top manga sisa',
     nameEn: 'Solid Leggings & Sleeveless Top Set',
     price: 73,
     category: 'Conjuntos',
@@ -313,7 +321,7 @@ export const products: Product[] = [
   {
     id: 35,
     name: 'Conjunto leggings levanta cola y top manga sisa',
-    nameEn: 'Butt-Lift Leggings & Sleeveless Top Set',
+    nameEn: 'Butt Lift Leggings & Sleeveless Top Set',
     price: 73,
     category: 'Conjuntos',
     image: UNSPLASH('1584863495140-a320b13a11a8'),
@@ -321,7 +329,7 @@ export const products: Product[] = [
   {
     id: 36,
     name: 'Conjunto Leggings levanta cola y top tiras',
-    nameEn: 'Butt-Lift Leggings & Strap Top Set',
+    nameEn: 'Butt Lift Leggings & Strap Top Set',
     price: 73,
     category: 'Conjuntos',
     image: UNSPLASH('1540582093410-c06370c89515'),
@@ -329,7 +337,7 @@ export const products: Product[] = [
   {
     id: 37,
     name: 'Conjunto leggings levanta cola y top manga corta',
-    nameEn: 'Butt-Lift Leggings & Short Sleeve Top Set',
+    nameEn: 'Butt Lift Leggings & Short Sleeve Top Set',
     price: 78,
     category: 'Conjuntos',
     image: UNSPLASH('1768929096134-f45af7839e83'),
@@ -338,7 +346,7 @@ export const products: Product[] = [
   {
     id: 38,
     name: 'Conjunto Leggings push up y malla lados (Talla única; Gris/Azul)',
-    nameEn: 'Push-Up Leggings & Side Mesh Set (One Size; Grey/Blue)',
+    nameEn: 'Push Up Leggings & Side Mesh Set (One Size; Grey/Blue)',
     price: 78,
     category: 'Conjuntos',
     image: UNSPLASH('1768929096117-c0b04a7c8fc2'),
@@ -373,7 +381,7 @@ export const products: Product[] = [
   {
     id: 42,
     name: 'Enterizo Short push up (única unidad, beige)',
-    nameEn: 'Push-Up Short Bodysuit (one unit, beige)',
+    nameEn: 'Push Up Short Bodysuit (one unit, beige)',
     price: 55,
     category: 'Enterizos y Vestidos',
     image: UNSPLASH('1606902965551-dce093cda6e7'),
@@ -435,7 +443,7 @@ export const products: Product[] = [
   {
     id: 49,
     name: 'Camisilla malla recogido atrás',
-    nameEn: 'Back-Gathered Mesh Tank',
+    nameEn: 'Back Gathered Mesh Tank',
     price: 28,
     category: 'Blusas y Camisillas',
     image: UNSPLASH('1618244965061-1d27b208d6e8'),
@@ -443,7 +451,7 @@ export const products: Product[] = [
   {
     id: 50,
     name: 'Camisilla lisa abertura atrás',
-    nameEn: 'Open-Back Solid Tank',
+    nameEn: 'Open Back Solid Tank',
     price: 32,
     category: 'Blusas y Camisillas',
     image: UNSPLASH('1563132337-f159f484226c'),
