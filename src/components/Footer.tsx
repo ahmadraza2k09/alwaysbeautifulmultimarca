@@ -11,7 +11,7 @@ const t = (lang: Lang, es: string, en: string) => lang === 'es' ? es : en
 
 export function Footer({ lang, onNav }: Props) {
   return (
-    <footer style={{ backgroundColor: '#1a0a30' }}>
+    <footer className="skeu-surface-dark" style={{ backgroundColor: '#1a0a30' }}>
       <div className="max-w-7xl mx-auto px-6 pt-14 pb-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
           {/* Brand */}
@@ -140,7 +140,7 @@ export function Footer({ lang, onNav }: Props) {
               </li>
               <li className="flex items-center gap-2">
                 <span style={{ color: '#B384C8' }}>●</span>
-                {t(lang, '🇨🇴 Hecho en Colombia', '🇨🇴 Made in Colombia')}
+                {t(lang, 'Hecho en Colombia', 'Made in Colombia')}
               </li>
             </ul>
           </div>
@@ -148,8 +148,10 @@ export function Footer({ lang, onNav }: Props) {
 
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
-          <p>© 2025 Always Beautiful. {t(lang, 'Todos los derechos reservados.', 'All rights reserved.')}</p>
-          <p>{t(lang, 'Hecho con ❤️ en Colombia para el mundo.', 'Made with ❤️ in Colombia for the world.')}</p>
+          <p>© {new Date().getFullYear()} Always Beautiful. {t(lang, 'Todos los derechos reservados.', 'All rights reserved.')}</p>
+          <a href="#" className="hover:text-white/60 transition-colors">
+            Designed by Mazhar Creative Agency
+          </a>
         </div>
       </div>
     </footer>
