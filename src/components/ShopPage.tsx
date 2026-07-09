@@ -58,7 +58,7 @@ export function ShopPage({ lang, initialCategory, onAddToCart, onSelectProduct }
 
       <div className="flex gap-8">
         {/* Sidebar (desktop) */}
-        <aside className="hidden lg:block w-56 shrink-0 skeu-surface rounded-2xl p-5" style={{ backgroundColor: '#fff' }}>
+        <aside className="hidden lg:block w-56 shrink-0 self-start skeu-surface rounded-2xl p-5" style={{ backgroundColor: '#fff' }}>
           <SidebarContent
             lang={lang}
             allCats={allCats}
