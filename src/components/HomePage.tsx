@@ -238,7 +238,7 @@ export function HomePage({ lang, onShop, onAddToCart, onSelectProduct }: Props) 
       <section className="py-16 px-4 max-w-7xl mx-auto">
         <div className="rounded-3xl overflow-hidden">
           <div
-            className="flex flex-col justify-center p-10 sm:p-14"
+            className="flex flex-col items-center justify-center text-center p-10 sm:p-14"
             style={{ backgroundColor: '#5A2D9C' }}
           >
             <span className="text-xs font-bold tracking-widest uppercase mb-4" style={{ color: '#B384C8' }}>
@@ -258,7 +258,7 @@ export function HomePage({ lang, onShop, onAddToCart, onSelectProduct }: Props) 
             </p>
             <button
               onClick={() => onShop('Fajas')}
-              className="self-start px-6 py-3 rounded-full text-sm font-semibold transition-all hover:scale-105"
+              className="px-6 py-3 rounded-full text-sm font-semibold transition-all hover:scale-105"
               style={{ backgroundColor: '#E845A3', color: '#fff' }}
             >
               {t(lang, 'Explorar Fajas', 'Explore Shapewear')}
