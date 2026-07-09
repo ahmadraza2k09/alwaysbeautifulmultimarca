@@ -236,8 +236,7 @@ export function HomePage({ lang, onShop, onAddToCart, onSelectProduct }: Props) 
 
       {/* Split banner */}
       <section className="py-16 px-4 max-w-7xl mx-auto">
-        <div className="rounded-3xl overflow-hidden grid md:grid-cols-2 min-h-[380px]">
-          {/* Left */}
+        <div className="rounded-3xl overflow-hidden">
           <div
             className="flex flex-col justify-center p-10 sm:p-14"
             style={{ backgroundColor: '#5A2D9C' }}
@@ -251,7 +250,7 @@ export function HomePage({ lang, onShop, onAddToCart, onSelectProduct }: Props) 
             >
               {t(lang, 'Fajas que moldean,\nno aprietan.', 'Shapewear that sculpts,\nnot squeezes.')}
             </h2>
-            <p className="text-white/70 text-sm mb-6">
+            <p className="text-white/70 text-sm mb-6 max-w-lg">
               {t(lang,
                 'Compresión médica de calidad colombiana, diseñada para recuperación post-op y uso diario.',
                 'Medical-grade Colombian compression, designed for post-op recovery and everyday wear.'
@@ -264,15 +263,6 @@ export function HomePage({ lang, onShop, onAddToCart, onSelectProduct }: Props) 
             >
               {t(lang, 'Explorar Fajas', 'Explore Shapewear')}
             </button>
-          </div>
-          {/* Right */}
-          <div className="relative min-h-[260px]" style={{ backgroundColor: '#2B2B2B' }}>
-            <ImageWithFallback
-              src="https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=1000&h=600&fit=crop&crop=focalpoint&fp-x=0.4&fp-y=0.2&auto=format"
-              alt="Shapewear collection"
-              className="w-full h-full object-cover"
-              style={{ minHeight: '260px' }}
-            />
           </div>
         </div>
       </section>
