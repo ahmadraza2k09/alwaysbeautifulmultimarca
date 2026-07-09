@@ -1,5 +1,6 @@
 import { ProductCard } from './ProductCard'
 import { ImageWithFallback } from './ImageWithFallback'
+import heroImage from '../imports/girl-image-dashbaord.jpg'
 import { products, categories } from '../data/products'
 import type { Lang } from '../App'
 import type { Category, Product } from '../data/products'
@@ -116,8 +117,8 @@ export function HomePage({ lang, onShop, onAddToCart, onSelectProduct }: Props) 
               }}
             >
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1768929096150-9a76dc1d6560?w=1000&h=1000&fit=crop&auto=format"
-                alt="Always Beautiful activewear"
+                src={heroImage}
+                alt="Always Beautiful"
                 className="w-full h-full object-contain"
                 style={{ backgroundColor: '#2B1245' }}
               />
