@@ -149,7 +149,12 @@ export function Footer({ lang, onNav }: Props) {
         {/* Bottom bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-white/30">
           <p>© {new Date().getFullYear()} Always Beautiful. {t(lang, 'Todos los derechos reservados.', 'All rights reserved.')}</p>
-          <a href="#" className="hover:text-white/60 transition-colors">
+          <a
+            href="https://www.mazharcreativeagency.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white/60 transition-colors"
+          >
             Designed by Mazhar Creative Agency
           </a>
         </div>
