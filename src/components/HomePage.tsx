@@ -18,22 +18,10 @@ export function HomePage({ lang, onShop, onAddToCart }: Props) {
   return (
     <main>
       {/* Hero */}
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden" style={{ backgroundColor: '#1a0a30' }}>
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <ImageWithFallback
-            src="https://images.unsplash.com/photo-1768929096150-9a76dc1d6560?w=1400&h=900&fit=crop&auto=format"
-            alt="Always Beautiful activewear"
-            className="w-full h-full object-cover opacity-50"
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(90,45,156,0.85) 0%, rgba(26,10,48,0.6) 60%, transparent 100%)' }} />
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 py-20">
+      <section className="relative overflow-hidden" style={{ backgroundColor: '#1a0a30' }}>
+        <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 py-16 sm:py-20 grid md:grid-cols-2 gap-12 items-center">
+          {/* Text */}
           <div className="max-w-xl">
-            <div className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full text-xs font-semibold text-white/80 border border-white/20 backdrop-blur-sm">
-              🇨🇴 {t(lang, 'Hecho en Colombia', 'Made in Colombia')}
-            </div>
             <h1
               className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-none mb-4"
               style={{ fontFamily: "'Playfair Display', serif" }}
@@ -66,10 +54,42 @@ export function HomePage({ lang, onShop, onAddToCart }: Props) {
               </button>
             </div>
           </div>
+
+          {/* Framed 1:1 image */}
+          <div className="relative mx-auto w-full max-w-md">
+            <div
+              className="absolute -inset-8 rounded-full opacity-70 pointer-events-none"
+              style={{
+                background: 'radial-gradient(circle, rgba(232,69,163,0.35) 0%, rgba(90,45,156,0.25) 45%, transparent 70%)',
+                filter: 'blur(32px)',
+              }}
+            />
+            <div
+              className="relative rounded-3xl overflow-hidden"
+              style={{
+                aspectRatio: '1/1',
+                boxShadow: '0 24px 60px rgba(90,45,156,0.45), 0 4px 14px rgba(0,0,0,0.25), inset 0 0 0 1px rgba(232,69,163,0.35)',
+              }}
+            >
+              <ImageWithFallback
+                src="https://images.unsplash.com/photo-1768929096150-9a76dc1d6560?w=1000&h=1000&fit=crop&auto=format"
+                alt="Always Beautiful activewear"
+                className="w-full h-full object-contain"
+                style={{ backgroundColor: '#2B1245' }}
+              />
+              <div
+                className="absolute inset-0 pointer-events-none"
+                style={{
+                  background:
+                    'radial-gradient(circle at 30% 20%, rgba(255,255,255,0.12) 0%, transparent 35%), radial-gradient(ellipse at center, transparent 55%, rgba(26,10,48,0.55) 100%)',
+                }}
+              />
+            </div>
+          </div>
         </div>
 
         {/* Scroll hint */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs">
+        <div className="relative z-10 hidden sm:flex justify-center pb-8">
           <div className="w-px h-12 bg-gradient-to-b from-transparent to-white/30" />
         </div>
       </section>
