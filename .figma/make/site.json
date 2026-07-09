@@ -1,5 +1,9 @@
 {
-  "description": "An e-commerce store featuring a custom logo and integrated contact options via Instagram and WhatsApp for seamless customer inquiries.",
+  "title": "Always Beautiful",
+  "description": "An online store featuring a custom logo and integrated contact options via Instagram and WhatsApp for seamless customer inquiries.",
+  "icons": {
+    "icon": "/favicon.png"
+  },
   "robots": {
     "index": false
   },
