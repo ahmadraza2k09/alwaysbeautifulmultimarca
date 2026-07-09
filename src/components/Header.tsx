@@ -39,7 +39,7 @@ export function Header({ lang, setLang, onNav, onShopCategory, cartCount }: Prop
             <img
               src={logoSrc}
               alt="Always Beautiful"
-              className="h-12 w-auto object-contain"
+              className="h-11 w-auto object-contain"
               style={{ filter: 'brightness(0) invert(1)' }}
             />
             <span
