@@ -268,7 +268,7 @@ export function HomePage({ lang, onShop, onAddToCart, onSelectProduct }: Props) 
           {/* Right */}
           <div className="relative min-h-[260px]" style={{ backgroundColor: '#2B2B2B' }}>
             <ImageWithFallback
-              src="https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=1000&h=600&fit=crop&crop=focalpoint&fp-x=0.4&fp-y=0.32&fp-z=1.5&auto=format"
+              src="https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=1000&h=600&fit=crop&crop=focalpoint&fp-x=0.4&fp-y=0.2&auto=format"
               alt="Shapewear collection"
               className="w-full h-full object-cover"
               style={{ minHeight: '260px' }}
